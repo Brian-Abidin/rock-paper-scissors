@@ -6,39 +6,49 @@
   <body>
     <script>
       /*
-      make user input case-insensitive
-      compare user input with computer input
-      create if statements comparing all outcomes of RPS for computer and User
-      return the winner using a string "win/lose x beats y"
+      loop that counts the winner of each round
       */
       let word = ['Rock', 'Paper', 'Scissors'];
       let computerPlay = () => word[Math.floor(Math.random()*word.length)]; // create a function that randomly returns 1 out of 3 variables, rock, paper, or scissors
-      // console.log(computerPlay(word));
       function userPlay(){
         let userinput = prompt('Rock, Paper, or Scissors?'); // prompt user for input of rock, paper, or scissors
         let choice = userinput[0].toUpperCase() + userinput.slice(1).toLowerCase(); // make user input case-insensitive
         return choice; // return user input choice
       }
       function playRound(playerSelection, computerSelection){ // create function takes 2 parameters of user input RPS vs Computer RPS
-        if (playerSelection === 'Rock' && computerSelection === 'Paper'){
-          return alert("You Lose! " + computerSelection + " beats " + playerSelection);
+        let win = 0;
+        let lose = 0;
+        if (playerSelection === 'Rock' && computerSelection === 'Paper'){ // create if statements comparing all outcomes of RPS for computer and User
+          lose++;
+          return alert("You Lose! " + computerSelection + " beats " + playerSelection); // return the winner using a string "win/lose x beats y"
         } else if (playerSelection === 'Paper' && computerSelection === 'Scissors'){
+          lose++;
           return alert("You Lose! " + computerSelection + " beats " + playerSelection);
         } else if (playerSelection === 'Scissors' && computerSelection === 'Rock'){
+          lose++;
           return alert("You Lose! " + computerSelection + " beats " + playerSelection)
         } else if (playerSelection === 'Rock' && computerSelection === 'Scissors'){
+          win++;
           return alert("You Win! " + playerSelection + " beats " + computerSelection)
         } else if (playerSelection === 'Paper' && computerSelection === 'Rock'){
+          win++;
           return alert("You Win! " + playerSelection + " beats " + computerSelection)
         } else if (playerSelection === 'Scissors' && computerSelection === 'Paper'){
+          win++;
           return alert("You Win! " + playerSelection + " beats " + computerSelection)
         } else {
           return alert("It's a Draw.");
         }
       }
-      const playerSelection = userPlay();
-      const computerSelection = computerPlay(word);
-      console.log(playRound(playerSelection, computerSelection));
+
+      function game(){ // create function called game
+        for (let i = 0; i < 5; i++){ // game function loops 5 times and returns a winner each loop
+          const playerSelection = userPlay();
+          const computerSelection = computerPlay(word);
+          console.log(playRound(playerSelection, computerSelection)); // call playRound inside new function
+        }
+      }
+      console.log(game());
     </script>
   </body>
 </html>
