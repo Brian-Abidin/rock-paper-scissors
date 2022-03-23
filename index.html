@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <script>
+      /* Create a function that randomly returns 3 variables, R, P, S
+      Function name is computerPlay
+      When function is called, return 1 out of 3 variables R,P,S at random*/
+      let word = ['Rock', 'Paper', 'Scissors'];
+      function computerPlay (){
+        let words = word[Math.floor(Math.random()*word.length)];
+        return words;
+      }
+      console.log(computerPlay(word));
+    </script>
+  </body>
+</html>
