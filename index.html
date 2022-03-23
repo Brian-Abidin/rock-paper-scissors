@@ -9,10 +9,7 @@
       Function name is computerPlay
       When function is called, return 1 out of 3 variables R,P,S at random*/
       let word = ['Rock', 'Paper', 'Scissors'];
-      function computerPlay (){
-        let words = word[Math.floor(Math.random()*word.length)];
-        return words;
-      }
+      let computerPlay = () => word[Math.floor(Math.random()*word.length)];
       console.log(computerPlay(word));
     </script>
   </body>
