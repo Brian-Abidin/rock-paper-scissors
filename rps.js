@@ -16,26 +16,34 @@ let computerPlay = () => word[Math.floor(Math.random()*word.length)]; // create 
 } */ 
 function playRound(playerSelection, computerSelection){ // create function takes 2 parameters of user input RPS vs Computer RPS
 while(playerSelection) { 
+  const round = document.querySelector('#round');
   if (playerSelection === 'Rock' && computerSelection === 'Paper'){ // create if statements comparing all outcomes of RPS for computer and User
-    console.log("You Lose! " + computerSelection + " beats " + playerSelection); // return the winner using a string "win/lose x beats y"
+    round.textContent = "You Lose! " + computerSelection + " beats " + playerSelection + "!";
+    //console.log("You Lose! " + computerSelection + " beats " + playerSelection); // return the winner using a string "win/lose x beats y"
     return 0; //returns false if lose
   } else if (playerSelection === 'Paper' && computerSelection === 'Scissors'){
-    console.log("You Lose! " + computerSelection + " beats " + playerSelection); 
+    round.textContent = "You Lose! " + computerSelection + " beats " + playerSelection + "!";
+    // console.log("You Lose! " + computerSelection + " beats " + playerSelection); 
     return 0;
   } else if (playerSelection === 'Scissors' && computerSelection === 'Rock'){
-    console.log("You Lose! " + computerSelection + " beats " + playerSelection);          
+    round.textContent = "You Lose! " + computerSelection + " beats " + playerSelection + "!";
+    //console.log("You Lose! " + computerSelection + " beats " + playerSelection);          
     return 0;
   } else if (playerSelection === 'Rock' && computerSelection === 'Scissors'){
-    console.log("You Win! " + playerSelection + " beats " + computerSelection);       
+    round.textContent = "You Win! " + playerSelection + " beats " + computerSelection + "!";
+    //console.log("You Win! " + playerSelection + " beats " + computerSelection);       
     return 1; //returns true if win
   } else if (playerSelection === 'Paper' && computerSelection === 'Rock'){
-    console.log("You Win! " + playerSelection + " beats " + computerSelection);      
+    round.textContent = "You Win! " + playerSelection + " beats " + computerSelection + "!";
+    //console.log("You Win! " + playerSelection + " beats " + computerSelection);      
     return 1;
   } else if (playerSelection === 'Scissors' && computerSelection === 'Paper'){
-    console.log("You Win! " + playerSelection + " beats " + computerSelection);      
+    round.textContent = "You Win! " + playerSelection + " beats " + computerSelection + "!";
+    //console.log("You Win! " + playerSelection + " beats " + computerSelection);      
     return 1;
   } else {
-    console.log("It's a Draw.");
+    round.textContent = "It's a Draw.";
+    //console.log("It's a Draw.");
     return;
   } 
 }
