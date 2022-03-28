@@ -68,13 +68,26 @@ return 0;
   }
 } */
 // game();
-const choice = document.querySelectorAll('button');
-choice.forEach((button) => {
-    button.addEventListener('click', () => {
-        let playerSelection = document.querySelector('button').textContent;
-        let computerSelection = computerPlay(word);
-        playRound(playerSelection,computerSelection);
-        console.log(computerSelection);
-    })
-});
+const rock = document.querySelector('#rock'); //selecting first id of rock in html
+  rock.addEventListener('click', () => { 
+    let playerSelection = document.querySelector('#rock').textContent;
+    let computerSelection = computerPlay(word);
+    playRound(playerSelection,computerSelection);
+    console.log(playerSelection);
+}); 
 
+const paper = document.querySelector('#paper');
+  paper.addEventListener('click', () => {
+    let playerSelection = document.querySelector('#paper').textContent;
+    let computerSelection = computerPlay(word);
+    playRound(playerSelection,computerSelection);
+    console.log(playerSelection);
+}); 
+
+const scissors = document.querySelector('#scissors');
+  scissors.addEventListener('click', () => {
+    let playerSelection = document.querySelector('#scissors').textContent;
+    let computerSelection = computerPlay(word);
+    playRound(playerSelection,computerSelection);
+    console.log(playerSelection);
+}); 
