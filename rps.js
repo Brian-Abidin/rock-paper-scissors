@@ -1,6 +1,6 @@
 let word = ['Rock', 'Paper', 'Scissors'];
 let computerPlay = () => word[Math.floor(Math.random()*word.length)]; // create a function that randomly returns 1 out of 3 variables, rock, paper, or scissors
-function userPlay(){
+/* function userPlay(){
   let userinput = prompt('Rock, Paper, or Scissors?'); // prompt user for input of rock, paper, or scissors
   if(userinput === ''){
     return false;
@@ -13,7 +13,7 @@ function userPlay(){
     return false;
   }
   return choice; // return user input choice
-}
+} */ 
 function playRound(playerSelection, computerSelection){ // create function takes 2 parameters of user input RPS vs Computer RPS
 while(playerSelection) { 
   if (playerSelection === 'Rock' && computerSelection === 'Paper'){ // create if statements comparing all outcomes of RPS for computer and User
@@ -42,7 +42,8 @@ while(playerSelection) {
 console.log("For not entering Rock, Paper, or Scissors, you lose.");
 return 0;
 }
-function game(){ // create function called game
+/*
+ function game(){ // create function called game
   let win = 0;
   let lose = 0;
   for (let i = 0; i < 5; i++){ // game function loops 5 times and returns a winner each loop
@@ -57,7 +58,7 @@ function game(){ // create function called game
       console.log("Losses:" + lose + " Wins:" + win)
     } else{
     }
-  }
+  } 
   if(win>lose){
     console.log("You Win! " + "Won:" + win + " Lost:" + lose);
   } else if(win === lose){
@@ -65,5 +66,15 @@ function game(){ // create function called game
   } else{
     console.log("You Lost! " + "Won:" + win + " Lost:" + lose);
   }
-}
-game();
+} */
+// game();
+const choice = document.querySelectorAll('button');
+choice.forEach((button) => {
+    button.addEventListener('click', () => {
+        let playerSelection = document.querySelector('button').textContent;
+        let computerSelection = computerPlay(word);
+        playRound(playerSelection,computerSelection);
+        console.log(computerSelection);
+    })
+});
+
